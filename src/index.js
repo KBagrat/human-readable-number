@@ -38,21 +38,21 @@ module.exports = function toReadable(number) {
     if (num_2 in obj) {
         result.push(num_2);
     } else {
-        result.push(num_2 % 10); // пушим 8
-        result.push(num_2 - (num_2 % 10)); // пушим 20
+        result.push(num_2 % 10);
+        result.push(num_2 - (num_2 % 10));
     }
     let num_3;
     let num_31;
     if ((num - num_2) !== 0) {
-        num_3 = num - num_2; // num_3 =  1228-28 =1200
+        num_3 = num - num_2;
         result.push(100);
-        num_31 = result.push((num_3 % 1000) / 100); // num_31 = 2
+        num_31 = result.push((num_3 % 1000) / 100);
     } else {
         return result.reverse().map(el => obj[el]).join(" ");
     }
 
     if ((num_3 - (num_3 % 1000)) !== 0) {
-        let num_4 = num_3 - (num_3 % 1000); //  1200-200 =1000
+        let num_4 = num_3 - (num_3 % 1000);
         result.push(num_4);
     } else {
         return result.reverse().filter(el => el !== 0).map(el => obj[el]).join(" ");
